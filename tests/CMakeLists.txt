@@ -12,6 +12,7 @@ add_executable(
   test_main
   test_mylib.cpp
   test_pointer.cpp
+  test_serializer.cpp
 )
 
 target_link_libraries(
