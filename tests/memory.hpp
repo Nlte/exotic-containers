@@ -1,7 +1,8 @@
-#include <iostream>
-#include <vector>
+#ifndef MEMORY_H_
+#define MEMORY_H_
 
 #include "core/pointer.hpp"
+#include <vector>
 
 std::vector<int> int_memory(20, 0);
 
@@ -59,13 +60,5 @@ template <> core_pointer<char> allocate(std::size_t n) {
 
 template <> std::size_t memsizeof<char>() { return 1; }
 
-int main() {
 
-    core_pointer<int> ptr = allocate<int>(1);
-
-    *ptr = 1;
-
-    std::cout << *ptr << std::endl;
-
-    return 0;
-}
+#endif // MEMORY_H_

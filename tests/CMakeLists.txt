@@ -11,6 +11,7 @@ FetchContent_MakeAvailable(googletest)
 add_executable(
   test_main
   test_mylib.cpp
+  test_pointer.cpp
 )
 
 target_link_libraries(
