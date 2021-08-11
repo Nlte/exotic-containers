@@ -2,6 +2,7 @@
 #include <vector>
 
 #include "core/pointer.hpp"
+#include "array.hpp"
 
 std::vector<int> int_memory(20, 0);
 
@@ -61,11 +62,21 @@ template <> std::size_t memsizeof<char>() { return 1; }
 
 int main() {
 
-    core_pointer<int> ptr = allocate<int>(1);
+    array<int, 10> arr;
 
-    *ptr = 1;
+    arr[0] = 123;
 
-    std::cout << *ptr << std::endl;
+    int copied = arr[0];
+    std::cout << "copied: " << copied << std::endl;
+
+    auto ref = arr[0];
+
+    ref = 456;
+
+    std::cout << "arr: " << arr[0] << std::endl;
+    std::cout << "ref: " << ref << std::endl;
+    std::cout << "copied: " << copied << std::endl;
+    std::cout << "mem: " << int_memory[0] << std::endl;
 
     return 0;
 }
