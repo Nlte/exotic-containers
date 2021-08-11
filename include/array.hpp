@@ -3,6 +3,7 @@
 
 #include <stdexcept>
 #include "core/pointer.hpp"
+#include "core/log.hpp"
 
 template <typename T, std::size_t N> struct array {
     typedef T value_type;

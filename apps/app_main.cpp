@@ -2,9 +2,10 @@
 #include <vector>
 
 #include "core/pointer.hpp"
+#include "core/log.hpp"
 #include "array.hpp"
 
-std::vector<int> int_memory(20, 0);
+std::vector<int> int_memory;
 
 template <> void memread(int *dst, int offset, int size) {
     if ((offset >= int_memory.size()) || (offset < 0)) {

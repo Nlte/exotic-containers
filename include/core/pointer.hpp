@@ -9,6 +9,8 @@
 #include <cstddef>
 #include <type_traits>
 
+#include "core/log.hpp"
+
 
 template <typename T> struct core_pointer;
 
@@ -28,7 +30,7 @@ template <typename T> struct core_pointer {
 
     core_pointer() { offset_ = -1; }
 
-    core_pointer(std::size_t offset) : offset_(offset) {}
+    core_pointer(std::size_t offset) : offset_(offset) { }
 
     core_pointer<T> operator+(std::ptrdiff_t diff) {
         std::size_t new_offset = offset_ + memsizeof<T>() * diff;
