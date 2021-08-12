@@ -3,7 +3,7 @@ cmake_minimum_required(VERSION 3.11...3.21)
 
 # Project name and a few useful settings. Other commands can pick up the results
 project(
-  exoticcontainers
+  ExoticContainers
   VERSION 0.1
   DESCRIPTION "Experiments with c++ and containers"
   LANGUAGES CXX)
@@ -46,6 +46,16 @@ add_subdirectory(src)
 
 # The executable code is here
 add_subdirectory(apps)
+
+
+# Azure SDK
+# See https://github.com/Azure/azure-sdk-for-cpp/releases
+FetchContent_Declare(
+  azure-sdk
+  URL https://github.com/Azure/azure-sdk-for-cpp/archive/refs/tags/azure-core_1.2.0.zip
+  )
+
+FetchContent_MakeAvailable(azure-sdk)
 
 # Testing only available if this is the main app
 # Emergency override MODERN_CMAKE_BUILD_TESTING provided as well
