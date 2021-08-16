@@ -60,5 +60,4 @@ template <> core_pointer<char> allocate(std::size_t n) {
 
 template <> std::size_t memsizeof<char>() { return 1; }
 
-
 #endif // MEMORY_H_

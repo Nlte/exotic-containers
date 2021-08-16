@@ -1,9 +1,9 @@
 #ifndef ARRAY_H_
 #define ARRAY_H_
 
-#include <stdexcept>
-#include "core/pointer.hpp"
 #include "core/log.hpp"
+#include "core/pointer.hpp"
+#include <stdexcept>
 
 template <typename T, std::size_t N> struct array {
     typedef T value_type;
@@ -22,7 +22,7 @@ template <typename T, std::size_t N> struct array {
     array() { start_ = allocate<value_type>(size_); }
 
     /* Iterators */
-    iterator begin(){ return iterator(start_); }
+    iterator begin() { return iterator(start_); }
 
     const_iterator begin() const { return const_iterator(start_); }
 
@@ -70,8 +70,9 @@ template <typename T, std::size_t N> struct array {
 
     reference back() { return size_ ? reference(end() - 1) : reference(end()); }
 
-    const_reference back() const { return size_ ? reference(end() - 1) : reference(end()); }
-
+    const_reference back() const {
+        return size_ ? reference(end() - 1) : reference(end());
+    }
 };
 
 #endif // ARRAY_H_

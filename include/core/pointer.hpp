@@ -11,7 +11,6 @@
 
 #include "core/log.hpp"
 
-
 template <typename T> struct core_pointer;
 
 template <typename T> struct core_reference;
@@ -30,7 +29,7 @@ template <typename T> struct core_pointer {
 
     core_pointer() { offset_ = -1; }
 
-    core_pointer(std::size_t offset) : offset_(offset) { }
+    core_pointer(std::size_t offset) : offset_(offset) {}
 
     core_pointer<T> operator+(std::ptrdiff_t diff) {
         std::size_t new_offset = offset_ + memsizeof<T>() * diff;
@@ -121,7 +120,7 @@ template <typename T> struct core_reference {
 
     core_pointer<T> ptr_;
 
-    core_reference(core_pointer<T> ptr): ptr_(ptr) { }
+    core_reference(core_pointer<T> ptr) : ptr_(ptr) {}
 
     operator T() const { return rget(ptr_); }
 
