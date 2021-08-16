@@ -152,7 +152,7 @@ void rput(const core_pointer<T> dst, const T *src, std::size_t len) {
 
 template <typename T> class serial_core_pointer {
 
-  public:
+    public:
     using type = T;
 
     serial_core_pointer(std::size_t size) : len_(size), data_(new T[size]) {}
@@ -167,7 +167,7 @@ template <typename T> class serial_core_pointer {
 
     std::size_t size() const { return len_; }
 
-  private:
+    private:
     T *data_;
     std::size_t len_;
 };

@@ -1,9 +1,9 @@
 #include <iostream>
 #include <vector>
 
-#include "core/pointer.hpp"
-#include "core/log.hpp"
 #include "array.hpp"
+#include "core/log.hpp"
+#include "core/pointer.hpp"
 
 std::vector<int> int_memory;
 

@@ -2,6 +2,4 @@
 
 #include <iostream>
 
-int libfunction_returns_int(int value) {
-    return value;
-}
+int libfunction_returns_int(int value) { return value; }
