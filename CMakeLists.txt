@@ -48,6 +48,11 @@ add_subdirectory(src)
 add_subdirectory(apps)
 
 
+# CMake and openssl trick for MacOS Catalina 10.15.7
+# otherwise the FindOpenSSL.cmake script can't find openssl and can't fetch
+# the azure SDK
+set(OPENSSL_ROOT_DIR "/usr/local/Cellar/openssl@1.1/1.1.1k")
+
 # Azure SDK
 # See https://github.com/Azure/azure-sdk-for-cpp/releases
 FetchContent_Declare(
