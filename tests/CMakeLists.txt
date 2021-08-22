@@ -10,7 +10,6 @@ FetchContent_MakeAvailable(googletest)
 
 add_executable(
   test_main
-  test_mylib.cpp
   test_pointer.cpp
   test_serializer.cpp
 )
@@ -18,7 +17,7 @@ add_executable(
 target_link_libraries(
   test_main
   gtest_main
-  mylib
+  containers
 )
 
 include(GoogleTest)

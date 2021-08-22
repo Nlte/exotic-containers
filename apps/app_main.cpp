@@ -5,6 +5,9 @@
 #include "core/log.hpp"
 #include "core/pointer.hpp"
 
+// #include <azure/core.hpp>
+// #include <azure/storage/blobs.hpp>
+
 std::vector<int> int_memory;
 
 template <> void memread(int *dst, int offset, int size) {
